@@ -10,6 +10,11 @@ p.venue {
   font-size: 1.7em;
 }
 
+.slide h2.shout {
+  font-size: 1.7em;
+  line-height: 1.5;
+}
+
 .slide figure.cover.width.margin > :first-child {
   width: 88%
 }
