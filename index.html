@@ -80,6 +80,15 @@
       GraphQL queries only have meaning<br>
       with respect to <em>one</em> data source.
     </h2>
+    <pre><code>
+
+
+# List 10 people and their names
+{
+  person(first:10) {
+    name
+  }
+}</code></pre>
   </div>
 
   <div class="slide" id="sparql-universal">
@@ -87,6 +96,15 @@
       SPARQL queries have universal meaning<br>
       across <em>all</em> data sources.
     </h2>
+    <pre><code><span class="prefix">PREFIX dbo:  &lt;http://dbpedia.org/ontology/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+# List 10 people and their names
+SELECT * {
+  ?person a dbo:Person;
+          rdfs:label ?name.
+}
+LIMIT 10</code></pre>
   </div>
 
   <div class="slide" id="client-side">
@@ -94,7 +112,7 @@
       We can separate language from API:<br>
       this query runs partially <em>client-side</em>.
     </h2>
-    <iframe class="query-client" src="http://localhost:3000/query-client/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen&query=PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20%3Fperson%20%3Fname%20WHERE%20%7B%0A%20%20%3Fperson%20a%20dbo%3APerson%3B%20rdfs%3Alabel%20%3Fname.%0A%7D%20LIMIT%2010"></iframe>
+    <iframe class="query-client" src="http://localhost:3000/query-client/#datasources=http%3A%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen&query=SELECT%20*%20%7B%0A%20%20%3Fperson%20a%20dbo%3APerson%3B%0A%20%20%20%20%20%20%20%20%20%20rdfs%3Alabel%20%3Fname.%0A%7D%0ALIMIT%2010"></iframe>
   </div>
 
   <div class="slide" id="multiple-sources">
