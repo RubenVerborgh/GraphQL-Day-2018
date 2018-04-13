@@ -81,15 +81,47 @@
   <div class="slide" id="graphql-one-source">
     <h2>
       GraphQL queries only have meaning<br>
-      with respect to <em>one</em> data source.
+      with respect to <em>one</em> source.
+    </h2>
+    <pre><code>
+
+
+# List 10 people and their names
+<span class="next">{
+  person(first:10) {
+    name
+  }
+}</span></code></pre>
+  </div>
+
+  <div class="slide" id="graphql-one-source-users">
+    <h2>
+      GraphQL queries only have meaning<br>
+      with respect to <em>one</em> source.
     </h2>
     <pre><code>
 
 
 # List 10 people and their names
 {
-  person(first:10) {
-    name
+  users(first:10) {
+    fullName
+  }
+}</code></pre>
+  </div>
+
+    <div class="slide" id="graphql-one-source-friends">
+    <h2>
+      GraphQL queries only have meaning<br>
+      with respect to <em>one</em> source.
+    </h2>
+    <pre><code>
+
+
+# List 10 people and their names
+{
+  friends(first:10) {
+    displayName
   }
 }</code></pre>
   </div>
@@ -97,7 +129,7 @@
   <div class="slide" id="sparql-universal">
     <h2>
       SPARQL queries have universal meaning<br>
-      across <em>all</em> data sources.
+      across <em>all</em> possible sources.
     </h2>
     <pre><code><span class="prefix">PREFIX dbo:  &lt;http://dbpedia.org/ontology/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
@@ -220,7 +252,7 @@ LIMIT 10</code></pre>
   <div class="slide" id="execute-anywhere">
     <h2>
       Ann app’s queries can be run anywhere:<br>
-      client, server, intermediaries—<em class="next">or all three</em>.<br>
+      client, server, intermediaries—<em>or all three</em>.<br>
     </h2>
     <figure class="cover width margin">
       <img src="images/queries-network.svg" alt="">
